@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="main.css" />
+
 </head>
 
 <body>
@@ -10,16 +11,16 @@
 
     <p>
         <label for="voltage_rated">Voltage (Rated):</label>
-        <input type="text" id="voltage_rated" name="voltage_rated" />
+        <input type="text" id="voltage_rated" name="voltage_rated" placeholder="0" />
         <br />
         <br />
         <label for="voltage_supplied">Voltage (Supplied):</label>
-        <input type="text" id="voltage_supplied" name="voltage_supplied" />
+        <input type="text" id="voltage_supplied" name="voltage_supplied" placeholder="0" />
         <br />
         <br />
 
         <label for="no_load_torque">No load Torque (Nm):</label>
-        <input type="text" id="no_load_torque" name="no_load_torque" />
+        <input type="text" id="no_load_torque" name="no_load_torque" placeholder="0" />
         <select>
             <option selected="selected" value="no_load_newton_meter">newton-meter</option>
             <option value="no_load_torque_ft_lb">ft-lb</option>
@@ -28,7 +29,7 @@
         <br />
 
         <label for="rated_torque">Rated Torque (Nm):</label>
-        <input type="text" id="rated_torque" name="rated_torque" />
+        <input type="text" id="rated_torque" name="rated_torque" placeholder="0" />
         <select>
             <option selected="selected" value="rated_torque_newton_meter">newton-meter</option>
             <option value="rated_torque_ft_lb">ft-lb</option>
@@ -37,7 +38,7 @@
         <br />
 
         <label for="no_load_speed">No Load Speed (RPM):</label>
-        <input type="text" id="no_load_speed" name="no_load_speed" />
+        <input type="text" id="no_load_speed" name="no_load_speed" placeholder="0" />
         <select>
             <option selected="selected" value="no_load_speed_m_s">meters/second</option>
             <option value="no_load_speed_f_s">feet/second</option>
@@ -46,7 +47,7 @@
         <br />
 
         <label for="rated_speed">Rated Speed (RPM):</label>
-        <input type="text" id="rated_speed" name="rated_speed" />
+        <input type="text" id="rated_speed" name="rated_speed" placeholder="0" />
         <select>
             <option selected="selected" value="rated_speed_m_s">meters/second</option>
             <option value="rated_speed_f_s">feet/second</option>
@@ -55,16 +56,15 @@
         <br />
 
         <label for="no_load_current">No load Current (Amp):</label>
-        <input type="text" id="no_load_current" name="no_load_current" />
+        <input type="text" id="no_load_current" name="no_load_current" placeholder="0" />
         <br />
         <br />
 
         <label for="rated_current">Rated Current (Amp):</label>
-        <input type="text" id="rated_current" name="rated_current" />
+        <input type="text" id="rated_current" name="rated_current" placeholder="0" />
         <br />
         <br />
     </p>
-
     ----------------------------------------
 
     <h1>Output</h1>
@@ -83,7 +83,7 @@
     <br />
     <br />
     <br />
-    <button>Share Results</button>
+    <button onclick="copytoclipboard()">Copy to Clipboard</button>
 
     <br />
     <br />
