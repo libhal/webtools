@@ -28,6 +28,7 @@ var var_rated_current = 0;
 
 var mathstuff = 0;
 
+
 /////////////////////////////////////////////////////////////////////////
 // 2. Tie const values to document elements (text area and then display)
 /////////////////////////////////////////////////////////////////////////
@@ -234,3 +235,38 @@ window.addEventListener("load", (event) => {
 
     Calculate();
 });
+
+
+/////////////////////////////////////////////////////////////////////////
+// 8. Generate a URL based on the current textbox inputs
+/////////////////////////////////////////////////////////////////////////
+function generateURL() {
+    // test regex functionality
+    // console.log(/abc/.test("abcde"));
+    // var regex = new RegExp("(.*)\?()");
+    // alternate regex pattern
+    // var regexConst = new RegExp('(.*)\index.html?()')
+    const documentLocation = document.location
+
+    var regexConst = new RegExp('(.*)\index.html?()')
+    var domain_name_extracted = regexConst.exec(documentLocation)
+
+    console.log("domain name extracted %s", domain_name_extracted)
+    console.log("0 domain name extracted %s", domain_name_extracted[0])
+    console.log("1 domain name extracted %s", domain_name_extracted[1])
+
+    var baseString = `${domain_name_extracted[1]}index.html?voltage-rated=${input_voltage_rated.value}&voltage-supplied=${input_voltage_supplied.value}&no-load-torque=${input_no_load_torque.value}&rated-torque=${input_rated_torque.value}&no-load-speed=${input_no_load_speed.value}&rated-speed=${input_rated_speed.value}&no-load-current=${input_no_load_current.value}&rated-current=${input_rated_current.value}`
+    console.log(baseString)
+    return baseString
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+// 9. Copy to Clipboard
+/////////////////////////////////////////////////////////////////////////
+function copytoclipboard() {
+    // Get the URL by calling the generateURL() Function
+    copyText = generateURL()
+    //copy
+    navigator.clipboard.writeText(copyText);
+}
